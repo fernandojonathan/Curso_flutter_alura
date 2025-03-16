@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    const Column(
-  children: <Widget>[
-    Text('texto 1', textDirection: TextDirection.ltr,),
-    Text('texto 2', textDirection: TextDirection.ltr,),
-    Text('texto 3', textDirection: TextDirection.ltr,),
-    const Column(
-      children: <Widget>[
-        Text('texto 4 - dentro de outra coluna', textDirection: TextDirection.rtl,),
-      ],),
-    Expanded(
-      child: FittedBox(
-        child: FlutterLogo(),
+void main() { runApp(MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(title: Text('Transferências'),),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+            },
+          ),
+          body: Column(
+            children: <Widget>[
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.monetization_on_rounded),
+                  title: Text('100.00'),
+                  subtitle: Text('1000.00'),
+                )
+                ),
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.monetization_on_rounded),
+                  title: Text('200.00'),
+                  subtitle: Text('2000.00'),
+                )
+                ),
+            ]
       ),
-    ),
-  ],
-)
-  );
+    )
+  )
+ );
 }
 
